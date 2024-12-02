@@ -5,7 +5,7 @@ import numpy as np
 
 
 # Replace with your Alpha Vantage API key
-api_key = 'IJOCRRFEF6FE7RN8'
+api_key = 'G7596RFIB04K5Y5R'
 symbol = 'COF'
 risk_free_rate = 0.04178 / 12
 equity_risk_premium = 0.0407 / 12
