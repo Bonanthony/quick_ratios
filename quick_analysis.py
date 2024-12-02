@@ -5,11 +5,11 @@ import numpy as np
 
 
 # Replace with your Alpha Vantage API key
-api_key = 'G7596RFIB04K5Y5R'
-symbol = 'COF'
-risk_free_rate = 0.04178 / 12
-equity_risk_premium = 0.0407 / 12
-beta = 1.43
+api_key = 'G7596RFIB04K5Y5R' #Input - Current demo key will work: Type personal APIKEY if software needed for large-scale calculations
+symbol = 'COF' #<--Input: Type ticker symbol
+risk_free_rate = 0.04178 / 12 #<--Input: Type country riskfree rate
+equity_risk_premium = 0.0407 / 12 #<--Input: Type ticker equity risk premium
+beta = 1.43 #<--Input: Type ticker beta
 function = 'TIME_SERIES_MONTHLY_ADJUSTED'
 
 # Construct the API URL
