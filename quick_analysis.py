@@ -7,8 +7,8 @@ import numpy as np
 # Replace with your Alpha Vantage API key
 api_key = 'G7596RFIB04K5Y5R' #Input - Current demo key will work: Type personal APIKEY if software needed for large-scale calculations
 symbol = 'COF' #<--Input: Type ticker symbol
-risk_free_rate = 0.04178 / 12 #<--Input: Type country riskfree rate
-equity_risk_premium = 0.0407 / 12 #<--Input: Type ticker equity risk premium
+risk_free_rate = 0.04178 #<--Input: Type country riskfree rate
+equity_risk_premium = 0.0407 #<--Input: Type ticker equity risk premium
 beta = 1.43 #<--Input: Type ticker beta
 function = 'TIME_SERIES_MONTHLY_ADJUSTED'
 
@@ -38,7 +38,8 @@ df.rename(columns={'4. close': 'Close'}, inplace=True)
 df['Return'] = df['Close'].pct_change()
 
 # Sharpe Ratio
-mean_return = df['Return'].mean()  
+monthly_return = df['Return'].mean()  
+mean_return = (1 + monthly_return)**12 - 1
 variance = df['Return'].std()**2
 sharpe_ratio = (mean_return - risk_free_rate) / variance
 print(f'Sharpe Ratio: {sharpe_ratio}')
